@@ -1,7 +1,7 @@
 {
   "name": "devassistant",
-  "displayName": "DevAssistant",
-  "description": "",
+  "displayName": "devassistant",
+  "description": "Helping developers do more, in less time",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.75.0"
