@@ -1,0 +1,21 @@
+
+    body.vscode-light {
+        color: black!important;
+    }
+  
+    body.vscode-dark {
+        color: white!important;
+    }
+  
+    body.vscode-high-contrast {
+        color: red!important;
+    }
+
+    .formControl {
+        border: none;
+        height: 20px;
+        width: 40%;
+        background: inherit;
+        border: 1px solid #E5E5E5;
+        border-radius: 5px;
+    }

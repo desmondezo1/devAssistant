@@ -3,6 +3,7 @@
   "displayName": "devassistant",
   "description": "Helping developers do more, in less time",
   "version": "0.0.1",
+  "publisher": "Dezy.dev",
   "engines": {
     "vscode": "^1.75.0"
   },
@@ -10,16 +11,35 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:devassistant.helloWorld"
+    "onCommand:devassistant.helloWorld1"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "devassistant.helloWorld",
+        "command": "devassistant.helloWorld1",
         "title": "Hello World"
+      },
+      {
+        "command": "devassistant.understandThis",
+        "title": "Help me understand this ..."
       }
-    ]
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "devassistant.helloWorld1",
+          "when": "editorHasSelection"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "devassistant.understandThis",
+          "group": "help",
+          "when": "editorTextFocus"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
@@ -33,19 +53,23 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.75.0",
     "@types/glob": "^8.0.1",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
+    "@types/vscode": "^1.75.0",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
+    "@vscode/test-electron": "^2.2.2",
     "eslint": "^8.33.0",
     "glob": "^8.1.0",
     "mocha": "^10.1.0",
-    "typescript": "^4.9.4",
     "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4",
     "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1",
-    "@vscode/test-electron": "^2.2.2"
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.3.4",
+    "openai": "^3.2.1"
   }
 }
